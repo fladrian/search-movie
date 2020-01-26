@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import 'bulma/css/bulma.css'
 import './App.css';
 
-function App() {
+import Title from './components/Title'
+import SearchForm from './components/SearchForm'
+
+import MovieResults from './components/MovieResults'
+
+
+import Loader from './components/Loader'
+
+const App = () => {
+  const [results, setResults] = useState([])
+  const [loader, setLoader] = useState(false)
+  const _handleResults = (results,isLoad) => {
+  console.info(results)
+  setResults(results)
+  setLoader(isLoad)
+  
+ }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title>Search Movie</Title>
+      <div className="SearchForm-wrapper">
+        <SearchForm onResults={_handleResults} />
+        {
+          (!Object.is(results,undefined) && results.length !== 0) 
+          ? ''
+          : <p>Search your favorites movies here...</p>
+        }
+      </div>
+      {
+          !loader 
+          ? <MovieResults movies={results} loader={loader}/>
+          : <Loader/>
+      }
+      
     </div>
   );
 }
