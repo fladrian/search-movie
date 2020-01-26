@@ -22,11 +22,9 @@ const SearchForm = ({onResults}) => {
 		const { searchMovie } = inputMovies
 		onResults([],true)
 		const {data:{Search}}  = await axios.get(`http://www.omdbapi.com/?apikey=${api_key}&s=${searchMovie}`)
-		if(Search === undefined){
-			onResults(Search,false)
-		 }else(
-			onResults(Search,false)
-		 )
+		Search === undefined
+		?	onResults(Search,false,false)
+		:	onResults(Search,false,false)
 	}
 
 	return (

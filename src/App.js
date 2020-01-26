@@ -13,10 +13,12 @@ import Loader from './components/Loader'
 const App = () => {
   const [results, setResults] = useState([])
   const [loader, setLoader] = useState(false)
-  const _handleResults = (results,isLoad) => {
+  const [initMsg,setInitMsg] = useState(true)
+  const _handleResults = (results,isLoad,msg) => {
   console.info(results)
   setResults(results)
   setLoader(isLoad)
+  setInitMsg(msg)
   
  }
 
@@ -27,9 +29,7 @@ const App = () => {
       <div className="SearchForm-wrapper">
         <SearchForm onResults={_handleResults} />
         {
-          (!Object.is(results,undefined) && results.length !== 0) 
-          ? ''
-          : <p>Search your favorites movies here...</p>
+          initMsg && <p>Search your favorites movies here...</p>
         }
       </div>
       {
