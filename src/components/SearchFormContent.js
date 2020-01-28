@@ -1,19 +1,19 @@
 import React from 'react'
 
-const FormSearch = ({onSubmit,onChange}) => {
+const SearchFormContent = ({onSubmit,onChange}) => {
 	return (
 		<div>
 			<form onSubmit={onSubmit}>
 				<div className="field has-addons">
 					<div className="control">
-						<input className="input"
+						<input className="input search-input"
 							type="search"
 							name="searchMovie"
-							placeholder="Find a repository"
+							placeholder="Search your movie..."
 							onChange={onChange} />
 					</div>
 					<div className="control">
-						<button className="button is-warning">
+						<button className="bthome">
 							Search
     			</button>
 					</div>
@@ -22,4 +22,4 @@ const FormSearch = ({onSubmit,onChange}) => {
 		</div>
 	)
 }
-export default FormSearch
+export default SearchFormContent

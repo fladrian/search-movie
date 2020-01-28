@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 
-import FormSearch from './FormSearch'
+import SearchFormContent from './SearchFormContent'
 
 
 const SearchForm = ({onResults}) => {
@@ -12,7 +12,6 @@ const SearchForm = ({onResults}) => {
 
 	const _handleChange = (e) => {
 		const { name, value } = e.target
-		console.info(name, value)
 		setInputMovies({
 			[name]: value
 		})
@@ -22,16 +21,15 @@ const SearchForm = ({onResults}) => {
 		const { searchMovie } = inputMovies
 		onResults([],true)
 		const {data:{Search}}  = await axios.get(`http://www.omdbapi.com/?apikey=${api_key}&s=${searchMovie}`)
+		
 		Search === undefined
 		?	onResults(Search,false,false)
 		:	onResults(Search,false,false)
 	}
 
 	return (
-		<div>
-			<FormSearch onSubmit={_handleSubmit}
-									onChange={_handleChange} />
-		</div>
+			<SearchFormContent onSubmit={_handleSubmit}
+												 onChange={_handleChange} />
 	)
 }
 
