@@ -4,14 +4,13 @@ import '../App.css';
 
 const MovieList = ({ movies }) => {
 	return (
-		movies.map((movie, index) => {
-			console.info(movie)
+		movies.map((movie,index) => {
 			return (
 				<div
 					key={index}
 					className='MovieList'>
-					<MovieCard
-						movie={movie} />
+				
+					<MovieCard movie={movie} />
 				</div>
 			)
 		})
