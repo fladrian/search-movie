@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route component={Home} />
         <Route path="/details/:id" component={Details} />
         {/* <Route component={Error404} /> */}
       </Switch>
