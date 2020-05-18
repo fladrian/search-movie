@@ -28,8 +28,10 @@ const SearchForm = ({ onResults }) => {
 	}
 
 	return (
-		<SearchFormContent onSubmit={_handleSubmit}
-			onChange={_handleChange} />
+		<SearchFormContent 
+			onSubmit={_handleSubmit}
+			onChange={_handleChange} 
+		/>
 	)
 }
 

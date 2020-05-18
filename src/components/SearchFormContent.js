@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SearchFormContent = ({onSubmit,onChange}) => {
+const SearchFormContent = ({ onSubmit, onChange }) => {
 	return (
 		<div>
 			<form onSubmit={onSubmit}>
@@ -10,12 +10,13 @@ const SearchFormContent = ({onSubmit,onChange}) => {
 							type="search"
 							name="searchMovie"
 							placeholder="Search your movie..."
-							onChange={onChange} />
+							onChange={onChange}
+						/>
 					</div>
 					<div className="control">
 						<button className="bthome">
 							Search
-    			</button>
+						</button>
 					</div>
 				</div>
 			</form>

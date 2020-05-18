@@ -16,14 +16,16 @@ const MovieCard = ({ movie }) => {
 			<div className="card MovieList-item">
 				<div className="card-image">
 					<figure className="image" >
-						 <img style={loader ? {  backgroundImage: `url(${loading})`,
-																backgroundPosition: 'center center',
-																backgroundSize: '350px',
-														 	 	backgroundRepeat: 'no-repeat'} 
-													 : {	backgroundImage: `url(${Poster}`}}
-											 alt=''
-											 src={Poster}
-											 onChange={_handleLoad} />
+						<img style={loader ? {
+							backgroundImage: `url(${loading})`,
+							backgroundPosition: 'center center',
+							backgroundSize: '350px',
+							backgroundRepeat: 'no-repeat'
+						}
+							: { backgroundImage: `url(${Poster}` }}
+							alt=''
+							src={Poster}
+							onChange={_handleLoad} />
 					</figure>
 				</div>
 				<div className="movie-content">
