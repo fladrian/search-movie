@@ -13,7 +13,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/details/:id" component={Details} />
-        <Route component={Error404} />
+        {/* <Route component={Error404} /> */}
       </Switch>
     </div>
   );
